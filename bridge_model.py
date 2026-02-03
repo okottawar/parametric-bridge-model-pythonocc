@@ -40,31 +40,31 @@ SAVE_BREP = True
 BREP_FILENAME = "bridge_model.brep"
 
 # Factory functions
-from draw_i_section import create_i_section as external_i_section
-from draw_rectangular_prism import create_rectangular_prism as external_prism
+# from draw_i_section import create_i_section as external_i_section
+# from draw_rectangular_prism import create_rectangular_prism as external_prism
 
 #Custom Implementation:
-# def create_i_section(d, bf, tf, tw, length):
-#     web_height = d - 2 * tf
+def create_i_section(d, bf, tf, tw, length):
+    web_height = d - 2 * tf
 
-#     bottom_flange = BRepPrimAPI_MakeBox(length, bf, tf).Shape()
+    bottom_flange = BRepPrimAPI_MakeBox(length, bf, tf).Shape()
 
-#     top_flange = BRepPrimAPI_MakeBox(length, bf, tf).Shape()
-#     trsf = gp_Trsf()
-#     trsf.SetTranslation(gp_Vec(0, 0, d - tf))
-#     top_flange = BRepBuilderAPI_Transform(top_flange, trsf, True).Shape()
+    top_flange = BRepPrimAPI_MakeBox(length, bf, tf).Shape()
+    trsf = gp_Trsf()
+    trsf.SetTranslation(gp_Vec(0, 0, d - tf))
+    top_flange = BRepBuilderAPI_Transform(top_flange, trsf, True).Shape()
 
-#     web = BRepPrimAPI_MakeBox(length, tw, web_height).Shape()
-#     trsf = gp_Trsf()
-#     trsf.SetTranslation(gp_Vec(0, (bf - tw) / 2, tf))
-#     web = BRepBuilderAPI_Transform(web, trsf, True).Shape()
+    web = BRepPrimAPI_MakeBox(length, tw, web_height).Shape()
+    trsf = gp_Trsf()
+    trsf.SetTranslation(gp_Vec(0, (bf - tw) / 2, tf))
+    web = BRepBuilderAPI_Transform(web, trsf, True).Shape()
 
-#     shape = BRepAlgoAPI_Fuse(bottom_flange, top_flange).Shape()
-#     shape = BRepAlgoAPI_Fuse(shape, web).Shape()
-#     return shape
+    shape = BRepAlgoAPI_Fuse(bottom_flange, top_flange).Shape()
+    shape = BRepAlgoAPI_Fuse(shape, web).Shape()
+    return shape
 
-# def create_rectangular_prism(width, height, length):
-    # return BRepPrimAPI_MakeBox(length, width, height).Shape()
+def create_rectangular_prism(width, height, length):
+    return BRepPrimAPI_MakeBox(length, width, height).Shape()
 
 
 # Base Class
