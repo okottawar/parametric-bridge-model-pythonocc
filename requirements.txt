@@ -3,9 +3,10 @@
 # OR using conda: conda install -c conda-forge pythonocc-core
 
 # Core dependency
+# pythonocc-core>=7.7.0
 
 # Note: pythonocc-core is best installed via conda:
 # conda install -c conda-forge pythonocc-core
-#
+
 # The pip installation may require additional system dependencies
 # and may not work on all platforms.

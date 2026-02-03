@@ -13,8 +13,8 @@
 5. [Code Walkthrough](#code-walkthrough)
 6. [Usage Guide](#usage-guide)
 7. [Testing and Validation](#testing-and-validation)
-8. [Conclusion](#conclusion)
-
+8. [Deliverables](#deliverables)
+[Appendix](#appendix)
 ---
 
 ## 1. Executive Summary
@@ -345,7 +345,7 @@ ALL TESTS PASSED! ✓
 
 ---
 
-## Deliverables
+## 8. Deliverables
 
 The complete project includes:
 
